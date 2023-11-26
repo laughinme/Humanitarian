@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CheckEvent</string>
+    <string name="welcome">Войдите в свой аккаунт</string>
+    <string name="email">Введите свой email</string>
+    <string name="password">Введите пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="no_account">Зарегистрироваться</string>
+    <string name="school">Введите ОУ</string>
+    <string name="age">Введите ваш возраст</string>
+    <string name="name">Введите ваше имя</string>
+    <string name="data">Введите свои данные</string>
+    <string name="succesreg">Вход выполнен успешно</string>
+    <string name="inputcode">Введите код пользователя</string>
+    <string name="check">Проверить код</string>
+</resources>
