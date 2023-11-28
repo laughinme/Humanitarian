@@ -1,5 +1,8 @@
-from fastapi import FastAPI, Response, status
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Response, status, Request
+from fastapi.responses import JSONResponse, HTMLResponse
+from starlette.responses import RedirectResponse
+import json
+
 # from pydantic import BaseModel
 import sqlite3
 import random
@@ -20,7 +23,7 @@ app = FastAPI(
 
 def generate_code():
     count = 1
-    with sqlite3.connect('users.db') as conn:
+    with sqlite3.connect('FastApi/users.db') as conn:
         cur = conn.cursor()
         while count > 0:
             code = ''.join(random.choices(string.digits, k=6))
@@ -30,7 +33,7 @@ def generate_code():
     
 @app.post("/v1/users/register")
 async def register(username: str, password: str, age: int=None, school: str=None, name: str=None):
-    with sqlite3.connect('users.db') as conn:
+    with sqlite3.connect('FastApi/users.db') as conn:
         cur = conn.cursor()
         cur.execute(f'SELECT COUNT(*) FROM users WHERE username = "{username}"')
         exist = cur.fetchone()[0]
@@ -46,7 +49,7 @@ async def register(username: str, password: str, age: int=None, school: str=None
 
 @app.post("/v1/users/login")
 async def login(username: str, password: str):
-    with sqlite3.connect('users.db') as conn:
+    with sqlite3.connect('FastApi/users.db') as conn:
         cur = conn.cursor()
         cur.execute(f'SELECT password FROM users WHERE username = "{username}"')
         dbpassword = cur.fetchone()
@@ -65,7 +68,7 @@ async def login(username: str, password: str):
 
 @app.get("/v1/users/get")
 async def get_user(code: int):
-    with sqlite3.connect('users.db') as conn:
+    with sqlite3.connect('FastApi/users.db') as conn:
         cur = conn.cursor()
         cur.execute(f'SELECT username FROM users WHERE code = "{code}"')
         username = cur.fetchone()
@@ -79,7 +82,7 @@ async def get_user(code: int):
 
 @app.post("/v1/users/grant")
 async def grant_user(code: int):
-    with sqlite3.connect('users.db') as conn:
+    with sqlite3.connect('FastApi/users.db') as conn:
         cur = conn.cursor()
         cur.execute(f'SELECT COUNT(*) FROM users WHERE code = "{code}"')
         if cur.fetchone():
@@ -88,6 +91,25 @@ async def grant_user(code: int):
             return {"message": "Роль пользователя успешно изменена!"}
         else:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"message": "Такого пользователя не существует!"})
-    
 
-uvicorn.run(app, host='0.0.0.0', port=8677)
+# # Создаем экземпляр Jinja2Templates
+# templates = Jinja2Templates(directory="FastApi")  # Укажите путь к вашим HTML-шаблонам
+
+@app.get('/user')
+async def user_info(code: int):
+    with sqlite3.connect('FastApi/users.db') as conn:
+        cur = conn.cursor()
+        cur.execute(f'SELECT username, name, age, school, role FROM "users" WHERE code = "{code}"')
+        user = cur.fetchone()
+        if not user: return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"message": "Такого пользователя не существует!"})
+        username, name, age, school, role = user
+        data = json.dumps({"username": username, "name": name, "age": age, "school": school, "role": role, "code" : code})
+        app_url = f"myapp://data={data}"  # замените на схему вашего приложения и данные для передачи
+        return RedirectResponse(url=app_url)
+
+#     return templates.TemplateResponse("user_info.html", {"request": request, "username": username, "name": name, "age": age, "school": school, "role": role, "code" : code})
+
+
+
+# uvicorn.run(app, host='0.0.0.0', port=8677)
+# uvicorn.run(app)
