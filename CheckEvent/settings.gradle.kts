@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CheckEvent"
+rootProject.name = "CheckEventVer2"
 include(":app")
  

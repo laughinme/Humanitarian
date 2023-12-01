@@ -6,102 +6,85 @@
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context=".MainActivity">
+    tools:context=".checker_qr">
 
-    <ImageView
-        android:id="@+id/main_app_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <TextView
+        android:id="@+id/check_student_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="6"
+        android:textStyle="bold"
+        android:singleLine="false"
+        android:text="@string/check_enter_code"
+        android:textSize="50sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_screen_photo"
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/main_app_name"
+        android:id="@+id/check_input_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/code"
+        android:gravity="left"
         android:ems="10"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/main_text"
-        android:text="@string/main_screen"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_app_icon"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TextView
-        android:id="@+id/main_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="@string/sign_up"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_app_name"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toBottomOf="@+id/check_student_code" />
 
-    <TextView
-        android:id="@+id/continue_w_mail"
+    <EditText
+        android:id="@+id/check_example_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cont_w_mail"
         android:ems="10"
-        android:gravity="center"
-        android:textSize="20sp"
+        android:background="@drawable/my_border"
+        android:hint="@string/code_example"
+        android:inputType="number"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_title"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintTop_toBottomOf="@+id/check_input_code" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/check_button"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:backgroundTint="@color/for_button"
-        android:drawableLeft="@drawable/re_button_img"
         android:ems="15"
-        android:onClick="Click_Registerfirst"
-        android:text="@string/button_register"
+        android:onClick="Click_Check"
+        android:backgroundTint="@color/for_button"
+        android:drawableLeft="@drawable/checkmark_small"
+        android:text="@string/check"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/continue_w_mail"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/check_example_code" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/check_explain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:onClick="Click_Loginfirst"
-        android:text="@string/button_sign_in"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/grey"
+        android:singleLine="false"
+        android:ems="15"
+        android:text="@string/explain"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.05" />
-
-
-
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/check_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,45 @@
 <resources>
-    <string name="app_name">CheckEvent</string>
-    <string name="welcome">Войдите в свой аккаунт</string>
-    <string name="email">Введите свой email</string>
-    <string name="password">Введите пароль</string>
-    <string name="sign_in">Войти</string>
-    <string name="sign_up">Зарегистрироваться</string>
-    <string name="no_account">Зарегистрироваться</string>
-    <string name="school">Введите ОУ</string>
-    <string name="age">Введите ваш возраст</string>
-    <string name="name">Введите ваше имя</string>
-    <string name="data">Введите свои данные</string>
-    <string name="succesreg">Вход выполнен успешно</string>
-    <string name="inputcode">Введите код пользователя</string>
-    <string name="check">Проверить код</string>
+    <!--Global_Strings-->
+    <string name="app_name" translatable="false">Event Checker</string>
+    <string name="main_screen" translatable="false">IT School Hackathon</string>
+    <string name="button_register">Register</string>
+    <string name="button_sign_in">Log in</string>
+    <string name="button_back">Back</string>
+    <!--Main_Screen-->
+    <string name="sign_up" translatable="false">Sign Up</string>
+    <string name="cont_w_mail" translatable="false">Continue with Mail</string>
+    <!--Registration_Screen-->
+    <string name="register">Register</string>
+    <string name="input_name">Full name</string>
+    <string name="example_name">Ryan Gosling</string>
+    <string name="input_email" translatable="false">Email</string>
+    <string name="example_email" translatable="false">example@gmail.com</string>
+    <string name="input_password">Password</string>
+    <string name="example_password">Make sure your password is secure</string>
+    <string name="input_age">Your age</string>
+    <string name="example_age" translatable="false">17</string>
+    <string name="input_school">Your school</string>
+    <string name="example_school">MIT</string>
+    <string name="button_have_account">Already have an account?</string>
+    <!--Log_in_Screen-->
+    <string name="sign_in_welcome">Log in</string>
+    <string name="button_no_account">Dont have an account?</string>
+    <!--User_QR-->
+    <string name="qr_welcome">Hello,</string>
+    <string name="qr_tips">*Show your QR code or give your code to the checker</string>
+    <string name="qr_my_code">My code</string>
+    <!--Show_info_Screen-->
+    <string name="qr_owner">Student: *Имя пользователя*</string>
+    <string name="qr_owner_role">User is registered with the *role* role</string>
+    <string name="student_code">Student code</string>
+    <!--Checker_Screen-->
+    <string name="check_enter_code">Enter students code</string>
+    <string name="code">Code</string>
+    <string name="code_example" translatable="false">123456</string>
+    <string name="check">Check</string>
+    <string name="explain">*Ask the student to provide their access code to get into event</string>
+    <!--Admin_Panel-->
+    <string name="admin_enter_code">Enter persons code</string>
+    <string name="grant_role">Grant role</string>
+    <string name="admin_explain">*Ask the person to provide their code to give them the checker role</string>
 </resources>

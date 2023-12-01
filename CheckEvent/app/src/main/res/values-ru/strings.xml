@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Global_Strings-->
+    <string name="button_register">Зарегистрироваться</string>
+    <string name="button_sign_in">Войти</string>
+    <string name="button_back">Назад</string>
+    <!--Main_Screen-->
+    <!--Registration_Screen-->
+    <string name="register">Регистрация</string>
+    <string name="input_name">ФИО</string>
+    <string name="example_name">Масич Михаил Денисович</string>
+    <string name="input_password">Пароль</string>
+    <string name="example_password">Убедитесь что пароль надежный</string>
+    <string name="input_age">Возраст</string>
+    <string name="input_school">ОУ</string>
+    <string name="example_school">МАОУ ИЛ НГТУ</string>
+    <string name="button_have_account">Уже есть аккаунт?</string>
+    <!--Log_in_Screen-->
+    <string name="sign_in_welcome">Вход</string>
+    <string name="button_no_account">Еще нет аккаунта?</string>
+    <!--User_QR-->
+    <string name="qr_welcome">Привет,</string>
+    <string name="qr_tips">*Покажи свой QR-код или назови свой код проверяющему</string>
+    <string name="qr_my_code">Мой код</string>
+    <!--Show_info_Screen-->
+    <string name="qr_owner">Ученик: *Имя пользователя*</string>
+    <string name="qr_owner_role">Пользователь зарегистрирован с ролью *role*</string>
+    <string name="student_code">Код ученика</string>
+    <!--Checker_Screen-->
+    <string name="check_enter_code">Ввод кода ученика</string>
+    <string name="code">Код</string>
+    <string name="check">Проверить</string>
+    <string name="explain">*Попросите ученика предоставить свой код доступа для прохода на мероприятие</string>
+    <!--Admin_Panel-->
+    <string name="admin_enter_code">Введите код человека</string>
+    <string name="grant_role">Выдать роль</string>
+    <string name="admin_explain">*Попросите человека предоставить свой код, чтобы выдать ему роль проверяющего</string>
+</resources>

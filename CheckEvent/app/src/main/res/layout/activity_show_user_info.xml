@@ -12,11 +12,10 @@
         android:id="@+id/qr_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/qr_owner"
+        android:textSize="50sp"
         android:ems="6"
         android:singleLine="false"
-        android:text="@string/qr_welcome"
-        android:textColor="@color/black"
-        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -27,38 +26,25 @@
     <!--  TODO: Вписывать в строку user info значения с переменных из бд-->
 
     <TextView
-        android:id="@+id/textView_name"
+        android:id="@+id/qr_tip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="*username*"
-        android:ems="6"
-        android:textSize="50sp"
+        android:text="@string/qr_owner_role"
+        android:textSize="20sp"
+        android:ems="15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/qr_hello"
-        app:layout_constraintVertical_bias="0.02" />
-
-    <TextView
-        android:id="@+id/qr_tip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:text="@string/qr_tips"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_name"
         app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/user_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="*email,\n возраст,\n ОУ*"
+        android:layout_marginTop="20dp"
+        android:text="*email,\n age,\n school*"
         android:textSize="20sp"
         android:ems="15"
         android:gravity="left"
@@ -73,7 +59,7 @@
         android:id="@+id/qr_my_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/qr_my_code"
+        android:text="@string/student_code"
         android:textSize="50sp"
         android:ems="6"
         android:gravity="center"
@@ -82,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_info"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/qr_number_code"
@@ -90,7 +76,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
-        android:textStyle="bold"
         android:text="*Код*"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,19 +84,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/qr_my_code"
         app:layout_constraintVertical_bias="0.05" />
-
-
-    <ImageView
-        android:id="@+id/qr_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/qr_number_code"
-        app:layout_constraintVertical_bias="0.2"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

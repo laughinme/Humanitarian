@@ -6,102 +6,86 @@
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context=".MainActivity">
+    tools:context=".admin_panel">
 
-    <ImageView
-        android:id="@+id/main_app_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <TextView
+        android:id="@+id/admin_checker_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="6"
+        android:singleLine="false"
+        android:textStyle="bold"
+        android:text="@string/admin_enter_code"
+        android:textSize="50sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_screen_photo"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TextView
-        android:id="@+id/main_app_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/main_text"
-        android:text="@string/main_screen"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_app_icon"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TextView
-        android:id="@+id/main_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="@string/sign_up"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_app_name"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <TextView
-        android:id="@+id/continue_w_mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cont_w_mail"
-        android:ems="10"
-        android:gravity="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_title"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/for_button"
-        android:drawableLeft="@drawable/re_button_img"
-        android:ems="15"
-        android:onClick="Click_Registerfirst"
-        android:text="@string/button_register"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/continue_w_mail"
         app:layout_constraintVertical_bias="0.2" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/admin_input_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:onClick="Click_Loginfirst"
-        android:text="@string/button_sign_in"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/grey"
+        android:text="@string/code"
+        android:gravity="left"
+        android:ems="15"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/admin_checker_code"
+        app:layout_constraintVertical_bias="0.2" />
 
+    <EditText
+        android:id="@+id/admin_example_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/code_example"
+        android:inputType="number"
+        android:textSize="30sp"
+        android:background="@drawable/my_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_input_code"
+        app:layout_constraintVertical_bias="0.02" />
 
+    <Button
+        android:id="@+id/grant_button"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:ems="15"
+        android:onClick="Click_getrole"
+        android:drawableLeft="@drawable/checkmark_small"
+        android:text="@string/grant_role"
+        android:textSize="20sp"
+        android:backgroundTint="@color/for_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_example_code"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/admin_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:ems="15"
+        android:text="@string/admin_explain"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grant_button"
+        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.checkevent;
+package com.example.checkeventver2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +14,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void Click_Login(View view){
-        Intent intent = new Intent(this, Inspector.class);
+    public void Click_Registerfirst(View view){
+        Intent intent = new Intent(this, register_screen.class);
         startActivity(intent);
     }
-    public void Register(View view){
-        Intent intent = new Intent(this, Users.class);
+    public void Click_Loginfirst(View view){
+        Intent intent = new Intent(this, login_screen.class);
         startActivity(intent);
     }
+
 }
