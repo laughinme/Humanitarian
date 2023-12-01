@@ -2,10 +2,7 @@ from fastapi import FastAPI, Response, status, Request
 from fastapi.responses import JSONResponse, HTMLResponse
 from starlette.responses import RedirectResponse
 import json
-<<<<<<< Updated upstream
-=======
 import urllib.parse
->>>>>>> Stashed changes
 
 # from pydantic import BaseModel
 import sqlite3
@@ -36,11 +33,7 @@ def generate_code():
         return code
     
 @app.post("/v1/users/register")
-<<<<<<< Updated upstream
-async def register(username: str, password: str, age: int=None, school: str=None, name: str=None):
-=======
 async def register(username: str, password: str, age: str=None, school: str=None, name: str=None):
->>>>>>> Stashed changes
     with sqlite3.connect('FastApi/users.db') as conn:
         cur = conn.cursor()
         cur.execute(f'SELECT COUNT(*) FROM users WHERE username = "{username}"')
@@ -67,16 +60,10 @@ async def login(username: str, password: str):
         else:
             dbpassword = dbpassword[0]
             if dbpassword == password:
-<<<<<<< Updated upstream
-                cur.execute('SELECT role, code FROM users WHERE username = ?', (username,))
-                role, code = cur.fetchone()
-                return {"message": "Успешный вход!", "auth_code": str(code), "role": role}
-=======
                 cur.execute('SELECT name, age, school, role, code FROM users WHERE username = ?', (username,))
                 name, age, school, role, code = cur.fetchone()
                 link = f'http://api.qrserver.com/v1/create-qr-code/?data={urllib.parse.quote(f"http://us.pylex.me:8677/user?code={str(code)}")}&size=100x100'
                 return {"username" : username, "password" : password, "name" : name, "age" : age, "school" : school, "code": code, "role": role, "link" : link}
->>>>>>> Stashed changes
             
             elif dbpassword != password:
                 return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content={"message": "Неверный пароль!"})
@@ -120,21 +107,12 @@ async def user_info(code: int):
         if not user: return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"message": "Такого пользователя не существует!"})
         username, name, age, school, role = user
         data = json.dumps({"username": username, "name": name, "age": age, "school": school, "role": role, "code" : code})
-<<<<<<< Updated upstream
-        app_url = f"myapp://data={data}"  # замените на схему вашего приложения и данные для передачи
-=======
         app_url = f"hackathon://user_data?data={data}"  # замените на схему вашего приложения и данные для передачи
->>>>>>> Stashed changes
         return RedirectResponse(url=app_url)
 
 #     return templates.TemplateResponse("user_info.html", {"request": request, "username": username, "name": name, "age": age, "school": school, "role": role, "code" : code})
 
 
 
-<<<<<<< Updated upstream
-# uvicorn.run(app, host='0.0.0.0', port=8677)
-# uvicorn.run(app)
-=======
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0', port=8677)
->>>>>>> Stashed changes
